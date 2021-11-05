@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Card from "./components/Card";
+import './App.css'
+import pic from './pic.png'
 function App() {
+
+  const data = [
+    {
+      title: "Physical Health",
+      color: "#22356F"
+    },
+    {
+      title: "Mental Health",
+      color: "#0052C"
+    },
+    {
+      title: "Nutrition",
+      color: null,
+      img: pic
+    },
+    {
+      title: "Gymnastic",
+      color: "#62D0DF"
+    },
+    {
+      title: "Crossift",
+      color: "#DEE1FF"
+    },
+    {
+      title: "Aerobics",
+      color: "#8F00FF"
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        data.map((el, id) => {
+          return <Card data={el} key={id}/>
+        })
+      }
     </div>
   );
 }
